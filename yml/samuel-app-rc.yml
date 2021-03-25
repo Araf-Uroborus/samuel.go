@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+     name: samuel-app-rc
+     labels:
+         app: samuel-app
+         tipo: web
+spec:
+  template:
+      metadata: 
+        name: samuel-app-pod
+        labels:
+            app: samuel-app
+            tipo: web
+      spec:
+        containers:
+           - name: samuel-nginx-container
+             image: nginx
+  replicas: 3
+        
