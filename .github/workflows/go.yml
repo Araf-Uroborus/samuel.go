@@ -1,0 +1,35 @@
+name: Go
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.15
+
+    - name: output pipeline
+      uses: Code-Hex/neo-cowsay-action@v1
+      with:
+        message: 'Hora de rodar nossos exercícios...'
+        cow: 'gopher'
+
+    - name: Run
+      env:
+        EXERCICIOS: Exercicio/*.go
+      run: |
+        for exercicio in $EXERCICIOS; do echo "-_-_-_-_-_-_-_-" ; \
+        echo " " ; \
+        echo "RODANDO EXERCÍCIO $exercicio" ; \
+        echo " " ; \
+        go run $exercicio ; echo " " ; done
+        # echo " " ; \
+        
