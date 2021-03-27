@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: samuel-app-pod
+  labels:
+    app: samuel-app
+    tipo: samuel-web
+    autor: samuel
+spec:
+  containers:
+  - name: nginx-container
+    image: nginx

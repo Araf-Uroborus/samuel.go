@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: samuel-replicaset
+  labels:
+    app: samuel-meuapp
+    type: samuel-web
+spec:
+  template:
+    metadata:
+      name: samuel-app-pod
+      labels:
+        app: samuel-app
+        tipo: samuel-web
+    spec:
+      containers:
+      - name: samuel-nginx-container
+        image: nginx
+  replicas: 6
+  selector:
+    matchLabels:
+      tipo: samuel-web
