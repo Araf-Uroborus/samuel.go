@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+     name: logs-replicaset
+     labels:
+         app: samuel-replicaset
+         tipo: logs
+spec:
+  template:
+      metadata: 
+        name: samuel-replicaset-pod
+        labels:
+            app: samuel-replicaset
+            tipo: web
+      spec:
+        containers:
+           - name: samuel-nginx-container
+             image: nginx
+  replicas: 10
+        

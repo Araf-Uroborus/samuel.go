@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+   name: wernight-funbox-samuel
+   labels:
+      app: wernight-funbox
+      tipo: banco
+      autor: samuel
+spec: 
+   containers:
+      - name: wernight-funbox
+        image: wernight/funbox

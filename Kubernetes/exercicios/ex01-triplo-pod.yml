@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: meunovopod
+  labels:
+    app: redisnginx
+    tipo: bancoweb
+spec:
+  containers:
+    - name: redis
+      image: redis32
+    - name: nginx
+      image: nginx
+    - name: fluentd
+      image: fluentd
