@@ -108,6 +108,20 @@ Lista de comandos Kubernetes
 
   `kubectl scale --replicas=3 -f rs-nginx.yaml`
 
+- Apenas ver a configuração yaml para um pod nginx
+
+  `kubectl run --image=nginx nginx --dry-run=client -o yaml`
+
+# Criar arquivos yaml
+
+- Arquivo yaml para um pod nginx
+
+  `kubectl run --image=nginx nginx --dry=run=client -o yaml > nginx-pod.yml`
+
+- Arquivo yaml para um deployment nginx com 3 replicas
+
+  `kubectl create deployment --image=nginx nginx --replicas=3 --dry=run=client -o yaml > nginx-pod.yml`
+
 # Kind - Cluster Local com Kind
 
 - Listar containers Docker rodando
